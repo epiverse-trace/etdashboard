@@ -1,0 +1,50 @@
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '42 1 * * *'
+
+name: check-deadlines
+
+jobs:
+  fetch-deadlines:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: r-lib/actions/setup-pandoc@v2
+
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          use-public-rspm: true
+
+      - uses: r-lib/actions/setup-renv@v2
+
+      - name: Fetch deadlines for Epiverse-TRACE packages
+        shell: Rscript {0}
+        run: |
+          et_cran_pkgs <- "https://epiverse-trace.r-universe.dev/api/packages/" |>
+            jsonlite::fromJSON() |>
+            dplyr::filter(
+              `_registered`,
+              `_cranurl`
+            ) |>
+            dplyr::pull(Package)
+
+          crandb <- tools::CRAN_package_db()
+
+          et_pkgs_deadline <- crandb |>
+            dplyr::filter(
+              Package %in% et_cran_pkgs,
+              !is.na(Deadline)
+            )
+
+          for (i in seq_len(nrow(et_pkgs_deadline))) {
+            pkg <- et_pkgs_deadline$Package[i]
+            deadline <- et_pkgs_deadline$Deadline[i]
+            # Convert this step to posting a GitHub issue once confirmed working
+            stop(glue::glue("Package {pkg} is at risk to be archived by {deadline}."))
+          }
