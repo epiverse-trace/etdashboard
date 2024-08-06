@@ -1,0 +1,50 @@
+---
+title: "Epiverse-TRACE CRAN checks"
+format:
+  dashboard
+---
+
+```{r}
+get_pkg_checks <- function(pkg) {
+
+  glue::glue("https://cran.r-project.org/web/checks/check_results_{pkg}.html") |>
+    xml2::read_html() |>
+    xml2::xml_find_first("//table") |>
+    rvest::html_table() |>
+    with(data = _, table(Status))
+
+}
+```
+
+## CRAN checks
+
+```{r, cache=TRUE}
+et_cran_pkgs <- "https://epiverse-trace.r-universe.dev/api/packages/" |> 
+  jsonlite::fromJSON() |>
+  dplyr::filter(
+    `_registered`,
+    `_cranurl`
+    ) |> 
+  dplyr::pull(Package)
+```
+
+```{r, cache=TRUE}
+et_pkgs_cchecks <- et_cran_pkgs |>
+  purrr::map(get_pkg_checks) |>
+  dplyr::bind_rows() |>
+  dplyr::mutate(dplyr::across(everything(), as.numeric)) |> 
+  dplyr::bind_rows(data.frame(OK = numeric(), NOTE = numeric(), WARN = numeric(), ERROR = numeric())) |>
+  dplyr::mutate(package = et_cran_pkgs, .before = 1) |> 
+  dplyr::arrange(package) |> 
+  dplyr::relocate(package, OK, NOTE, WARN, ERROR)
+```
+
+```{r, results='asis'}
+et_pkgs_cchecks |> 
+  dplyr::mutate(
+    package = glue::glue("[{package}](https://cran.r-project.org/web/checks/check_results_{package}.html)")
+  ) |>
+  gt::gt() |> 
+  gt::fmt_markdown(package) |> 
+  print()
+```
