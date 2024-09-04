@@ -44,7 +44,8 @@ et_pkgs_cchecks |>
   dplyr::mutate(
     package = glue::glue("[{package}](https://cran.r-project.org/web/checks/check_results_{package}.html)")
   ) |>
-  gt::gt() |> 
+  # pin id to avoid getting a random one each time and generating unnecessary diffs
+  gt::gt(id = "cchecks_table") |> 
   gt::fmt_markdown(package) |> 
   print()
 ```
