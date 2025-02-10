@@ -38,7 +38,8 @@ et_pkgs_cchecks <- et_cran_pkgs |>
   dplyr::bind_rows(data.frame(OK = numeric(), NOTE = numeric(), WARN = numeric(), ERROR = numeric())) |>
   dplyr::mutate(package = et_cran_pkgs, .before = 1) |> 
   dplyr::arrange(package) |> 
-  dplyr::relocate(package, OK, NOTE, WARN, ERROR)
+  dplyr::relocate(package, OK, NOTE, WARN, ERROR) |> 
+  dplyr::mutate(dplyr::across(everything(), ~ ifelse(is.na(.x), 0, .x)))
 ```
 
 ```{r, results='asis'}
@@ -49,5 +50,18 @@ et_pkgs_cchecks |>
   # pin id to avoid getting a random one each time and generating unnecessary diffs
   gt::gt(id = "cchecks_table") |> 
   gt::fmt_markdown(package) |> 
+  gt::fmt_markdown(package) |> 
+  gt::tab_style(
+    style = list(
+      gt::cell_fill(color = "#887700")
+    ),
+    locations = gt::cells_body(rows = ERROR > 0)
+  ) |> 
+  gt::tab_style(
+    style = list(
+      gt::cell_fill(color = "#C9654B")
+    ),
+    locations = gt::cells_body(rows = ERROR > 0)
+  ) |> 
   print()
 ```
