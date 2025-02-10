@@ -13,6 +13,9 @@ get_pkg_checks <- function(pkg) {
     xml2::read_html() |>
     xml2::xml_find_first("//table") |>
     rvest::html_table() |>
+    # We don't need to see outdated checks here
+    dplyr::mutate(Version == as.package_version(Version)) |> 
+    dplyr::filter(Version == max(Version)) |> 
     with(data = _, table(Status))
 
 }
