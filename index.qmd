@@ -4,6 +4,8 @@ format:
   dashboard
 ---
 
+Last update: `r Sys.Date()`
+
 ```{r}
 get_pkg_checks <- function(pkg) {
 
