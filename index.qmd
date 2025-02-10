@@ -56,13 +56,13 @@ et_pkgs_cchecks |>
   gt::fmt_markdown(package) |> 
   gt::tab_style(
     style = list(
-      gt::cell_fill(color = "#887700")
+      gt::cell_fill(color = "#DDBB00")
     ),
     locations = gt::cells_body(rows = ERROR > 0)
   ) |> 
   gt::tab_style(
     style = list(
-      gt::cell_fill(color = "#C9654B")
+      gt::cell_fill(color = "#F9956B")
     ),
     locations = gt::cells_body(rows = ERROR > 0)
   ) |> 
