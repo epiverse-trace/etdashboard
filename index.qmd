@@ -45,6 +45,15 @@ et_pkgs_cchecks <- et_cran_pkgs |>
   dplyr::mutate(dplyr::across(everything(), ~ ifelse(is.na(.x), 0, .x)))
 ```
 
+```{r}
+crandb <- tools::CRAN_package_db() |> 
+  dplyr::select(package = Package, Deadline) |> 
+  tidyr::replace_na(list(Deadline = ""))
+
+et_pkgs_cchecks <- et_pkgs_cchecks |> 
+  dplyr::left_join(crandb)
+```
+
 ```{r, results='asis'}
 et_pkgs_cchecks |> 
   dplyr::mutate(
