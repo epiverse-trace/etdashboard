@@ -45,13 +45,15 @@ jobs:
           issues <- gh::gh(
             "/repos/{owner}/{repo}/issues",
             owner = "epiverse-trace",
-            repo = "etdashboard"
+            repo = "etdashboard",
+            state = "all"
           ) |>
-            purrr::map(\(x) x[c("title", "number")]) |>
-            dplyr::bind_rows()
+            purrr::map(\(x) x[c("title", "number", "state")]) |>
+            dplyr::bind_rows() |>
+            dplyr::filter(state == "closed")
 
           et_pkgs_archiveable <- et_pkgs_deadline |>
-            dplyr::left_join(issues, by = dplyr::join_by(Package == title))
+            dplyr::inner_join(issues, by = dplyr::join_by(Package == title))
 
           for (i in seq_len(nrow(et_pkgs_archiveable))) {
             pkg <- et_pkgs_archiveable$Package[i]
@@ -61,14 +63,14 @@ jobs:
               "PATCH /repos/{owner}/{repo}/issues/{issue_number}",
               owner = "epiverse-trace",
               repo = "etdashboard",
-              state = "open"
+              state = "open",
               issue_number = issue
             )
             gh::gh(
               "POST /repos/{owner}/{repo}/issues/{issue_number}/comments",
               owner = "epiverse-trace",
               repo = "etdashboard",
-              issue_number = issue
+              issue_number = issue,
               body = glue::glue("Package {pkg} is at risk to be archived by {deadline}.")
             )
           }
