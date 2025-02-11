@@ -69,7 +69,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 <div class="page-layout-custom quarto-dashboard-content bslib-gap-spacing html-fill-container bslib-page-fill">  
 
-<p>Last update: 2025-02-10</p>
+<p>Last update: 2025-02-11</p>
 <div class="bslib-grid-item html-fill-item bslib-grid" data-layout="fill" style="display: grid; grid-template-rows: minmax(3em, max-content); grid-auto-columns: minmax(0, 1fr);">
 <div class="bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr);
 grid-auto-rows: minmax(0, 1fr);">
@@ -514,6 +514,15 @@ grid-auto-rows: minmax(0, 1fr);">
 #cchecks_table .gt_indent_5 {
   text-indent: 25px;
 }
+
+#cchecks_table .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#cchecks_table div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
 </style>
 <table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
@@ -533,18 +542,15 @@ WARN
 <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="ERROR">
 ERROR
 </th>
+<th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Deadline">
+Deadline
+</th>
 </tr>
 </thead>
 <tbody class="gt_table_body">
 <tr>
 <td headers="package" class="gt_row gt_center">
-<div data-qmd="[ColOpenData](https://cran.r-project.org/web/checks/check_results_ColOpenData.html)" class="html-fill-item html-fill-container">
-<div class="gt_from_md html-fill-item html-fill-container">
-<p>
-<a href="https://cran.r-project.org/web/checks/check_results_ColOpenData.html">ColOpenData</a>
-</p>
-</div>
-</div>
+<span data-qmd-base64="PGEgaHJlZj0iaHR0cHM6Ly9jcmFuLnItcHJvamVjdC5vcmcvd2ViL2NoZWNrcy9jaGVja19yZXN1bHRzX0NvbE9wZW5EYXRhLmh0bWwiPkNvbE9wZW5EYXRhPC9hPg=="><span class="gt_from_md"><a href="https://cran.r-project.org/web/checks/check_results_ColOpenData.html">ColOpenData</a></span></span>
 </td>
 <td headers="OK" class="gt_row gt_right">
 13
@@ -558,39 +564,32 @@ ERROR
 <td headers="ERROR" class="gt_row gt_right">
 0
 </td>
+<td headers="Deadline" class="gt_row gt_right">
+</td>
 </tr>
 <tr>
-<td headers="package" class="gt_row gt_center" style="background-color: #C9654B;">
-<div data-qmd="[cfr](https://cran.r-project.org/web/checks/check_results_cfr.html)" class="html-fill-item html-fill-container">
-<div class="gt_from_md html-fill-item html-fill-container">
-<p>
-<a href="https://cran.r-project.org/web/checks/check_results_cfr.html">cfr</a>
-</p>
-</div>
-</div>
+<td headers="package" class="gt_row gt_center" style="background-color: #F9956B;">
+<span data-qmd-base64="PGEgaHJlZj0iaHR0cHM6Ly9jcmFuLnItcHJvamVjdC5vcmcvd2ViL2NoZWNrcy9jaGVja19yZXN1bHRzX2Nmci5odG1sIj5jZnI8L2E+"><span class="gt_from_md"><a href="https://cran.r-project.org/web/checks/check_results_cfr.html">cfr</a></span></span>
 </td>
-<td headers="OK" class="gt_row gt_right" style="background-color: #C9654B;">
+<td headers="OK" class="gt_row gt_right" style="background-color: #F9956B;">
 8
 </td>
-<td headers="NOTE" class="gt_row gt_right" style="background-color: #C9654B;">
+<td headers="NOTE" class="gt_row gt_right" style="background-color: #F9956B;">
 0
 </td>
-<td headers="WARN" class="gt_row gt_right" style="background-color: #C9654B;">
+<td headers="WARN" class="gt_row gt_right" style="background-color: #F9956B;">
 0
 </td>
-<td headers="ERROR" class="gt_row gt_right" style="background-color: #C9654B;">
+<td headers="ERROR" class="gt_row gt_right" style="background-color: #F9956B;">
 5
+</td>
+<td headers="Deadline" class="gt_row gt_right" style="background-color: #F9956B;">
+2025-02-22
 </td>
 </tr>
 <tr>
 <td headers="package" class="gt_row gt_center">
-<div data-qmd="[cleanepi](https://cran.r-project.org/web/checks/check_results_cleanepi.html)" class="html-fill-item html-fill-container">
-<div class="gt_from_md html-fill-item html-fill-container">
-<p>
-<a href="https://cran.r-project.org/web/checks/check_results_cleanepi.html">cleanepi</a>
-</p>
-</div>
-</div>
+<span data-qmd-base64="PGEgaHJlZj0iaHR0cHM6Ly9jcmFuLnItcHJvamVjdC5vcmcvd2ViL2NoZWNrcy9jaGVja19yZXN1bHRzX2NsZWFuZXBpLmh0bWwiPmNsZWFuZXBpPC9hPg=="><span class="gt_from_md"><a href="https://cran.r-project.org/web/checks/check_results_cleanepi.html">cleanepi</a></span></span>
 </td>
 <td headers="OK" class="gt_row gt_right">
 8
@@ -604,16 +603,12 @@ ERROR
 <td headers="ERROR" class="gt_row gt_right">
 0
 </td>
+<td headers="Deadline" class="gt_row gt_right">
+</td>
 </tr>
 <tr>
 <td headers="package" class="gt_row gt_center">
-<div data-qmd="[epiCo](https://cran.r-project.org/web/checks/check_results_epiCo.html)" class="html-fill-item html-fill-container">
-<div class="gt_from_md html-fill-item html-fill-container">
-<p>
-<a href="https://cran.r-project.org/web/checks/check_results_epiCo.html">epiCo</a>
-</p>
-</div>
-</div>
+<span data-qmd-base64="PGEgaHJlZj0iaHR0cHM6Ly9jcmFuLnItcHJvamVjdC5vcmcvd2ViL2NoZWNrcy9jaGVja19yZXN1bHRzX2VwaUNvLmh0bWwiPmVwaUNvPC9hPg=="><span class="gt_from_md"><a href="https://cran.r-project.org/web/checks/check_results_epiCo.html">epiCo</a></span></span>
 </td>
 <td headers="OK" class="gt_row gt_right">
 13
@@ -627,16 +622,12 @@ ERROR
 <td headers="ERROR" class="gt_row gt_right">
 0
 </td>
+<td headers="Deadline" class="gt_row gt_right">
+</td>
 </tr>
 <tr>
 <td headers="package" class="gt_row gt_center">
-<div data-qmd="[epichains](https://cran.r-project.org/web/checks/check_results_epichains.html)" class="html-fill-item html-fill-container">
-<div class="gt_from_md html-fill-item html-fill-container">
-<p>
-<a href="https://cran.r-project.org/web/checks/check_results_epichains.html">epichains</a>
-</p>
-</div>
-</div>
+<span data-qmd-base64="PGEgaHJlZj0iaHR0cHM6Ly9jcmFuLnItcHJvamVjdC5vcmcvd2ViL2NoZWNrcy9jaGVja19yZXN1bHRzX2VwaWNoYWlucy5odG1sIj5lcGljaGFpbnM8L2E+"><span class="gt_from_md"><a href="https://cran.r-project.org/web/checks/check_results_epichains.html">epichains</a></span></span>
 </td>
 <td headers="OK" class="gt_row gt_right">
 13
@@ -650,16 +641,12 @@ ERROR
 <td headers="ERROR" class="gt_row gt_right">
 0
 </td>
+<td headers="Deadline" class="gt_row gt_right">
+</td>
 </tr>
 <tr>
 <td headers="package" class="gt_row gt_center">
-<div data-qmd="[epiparameter](https://cran.r-project.org/web/checks/check_results_epiparameter.html)" class="html-fill-item html-fill-container">
-<div class="gt_from_md html-fill-item html-fill-container">
-<p>
-<a href="https://cran.r-project.org/web/checks/check_results_epiparameter.html">epiparameter</a>
-</p>
-</div>
-</div>
+<span data-qmd-base64="PGEgaHJlZj0iaHR0cHM6Ly9jcmFuLnItcHJvamVjdC5vcmcvd2ViL2NoZWNrcy9jaGVja19yZXN1bHRzX2VwaXBhcmFtZXRlci5odG1sIj5lcGlwYXJhbWV0ZXI8L2E+"><span class="gt_from_md"><a href="https://cran.r-project.org/web/checks/check_results_epiparameter.html">epiparameter</a></span></span>
 </td>
 <td headers="OK" class="gt_row gt_right">
 11
@@ -673,16 +660,12 @@ ERROR
 <td headers="ERROR" class="gt_row gt_right">
 0
 </td>
+<td headers="Deadline" class="gt_row gt_right">
+</td>
 </tr>
 <tr>
 <td headers="package" class="gt_row gt_center">
-<div data-qmd="[epiparameterDB](https://cran.r-project.org/web/checks/check_results_epiparameterDB.html)" class="html-fill-item html-fill-container">
-<div class="gt_from_md html-fill-item html-fill-container">
-<p>
-<a href="https://cran.r-project.org/web/checks/check_results_epiparameterDB.html">epiparameterDB</a>
-</p>
-</div>
-</div>
+<span data-qmd-base64="PGEgaHJlZj0iaHR0cHM6Ly9jcmFuLnItcHJvamVjdC5vcmcvd2ViL2NoZWNrcy9jaGVja19yZXN1bHRzX2VwaXBhcmFtZXRlckRCLmh0bWwiPmVwaXBhcmFtZXRlckRCPC9hPg=="><span class="gt_from_md"><a href="https://cran.r-project.org/web/checks/check_results_epiparameterDB.html">epiparameterDB</a></span></span>
 </td>
 <td headers="OK" class="gt_row gt_right">
 13
@@ -696,16 +679,12 @@ ERROR
 <td headers="ERROR" class="gt_row gt_right">
 0
 </td>
+<td headers="Deadline" class="gt_row gt_right">
+</td>
 </tr>
 <tr>
 <td headers="package" class="gt_row gt_center">
-<div data-qmd="[finalsize](https://cran.r-project.org/web/checks/check_results_finalsize.html)" class="html-fill-item html-fill-container">
-<div class="gt_from_md html-fill-item html-fill-container">
-<p>
-<a href="https://cran.r-project.org/web/checks/check_results_finalsize.html">finalsize</a>
-</p>
-</div>
-</div>
+<span data-qmd-base64="PGEgaHJlZj0iaHR0cHM6Ly9jcmFuLnItcHJvamVjdC5vcmcvd2ViL2NoZWNrcy9jaGVja19yZXN1bHRzX2ZpbmFsc2l6ZS5odG1sIj5maW5hbHNpemU8L2E+"><span class="gt_from_md"><a href="https://cran.r-project.org/web/checks/check_results_finalsize.html">finalsize</a></span></span>
 </td>
 <td headers="OK" class="gt_row gt_right">
 9
@@ -719,16 +698,12 @@ ERROR
 <td headers="ERROR" class="gt_row gt_right">
 0
 </td>
+<td headers="Deadline" class="gt_row gt_right">
+</td>
 </tr>
 <tr>
 <td headers="package" class="gt_row gt_center">
-<div data-qmd="[linelist](https://cran.r-project.org/web/checks/check_results_linelist.html)" class="html-fill-item html-fill-container">
-<div class="gt_from_md html-fill-item html-fill-container">
-<p>
-<a href="https://cran.r-project.org/web/checks/check_results_linelist.html">linelist</a>
-</p>
-</div>
-</div>
+<span data-qmd-base64="PGEgaHJlZj0iaHR0cHM6Ly9jcmFuLnItcHJvamVjdC5vcmcvd2ViL2NoZWNrcy9jaGVja19yZXN1bHRzX2xpbmVsaXN0Lmh0bWwiPmxpbmVsaXN0PC9hPg=="><span class="gt_from_md"><a href="https://cran.r-project.org/web/checks/check_results_linelist.html">linelist</a></span></span>
 </td>
 <td headers="OK" class="gt_row gt_right">
 13
@@ -742,16 +717,12 @@ ERROR
 <td headers="ERROR" class="gt_row gt_right">
 0
 </td>
+<td headers="Deadline" class="gt_row gt_right">
+</td>
 </tr>
 <tr>
 <td headers="package" class="gt_row gt_center">
-<div data-qmd="[numberize](https://cran.r-project.org/web/checks/check_results_numberize.html)" class="html-fill-item html-fill-container">
-<div class="gt_from_md html-fill-item html-fill-container">
-<p>
-<a href="https://cran.r-project.org/web/checks/check_results_numberize.html">numberize</a>
-</p>
-</div>
-</div>
+<span data-qmd-base64="PGEgaHJlZj0iaHR0cHM6Ly9jcmFuLnItcHJvamVjdC5vcmcvd2ViL2NoZWNrcy9jaGVja19yZXN1bHRzX251bWJlcml6ZS5odG1sIj5udW1iZXJpemU8L2E+"><span class="gt_from_md"><a href="https://cran.r-project.org/web/checks/check_results_numberize.html">numberize</a></span></span>
 </td>
 <td headers="OK" class="gt_row gt_right">
 13
@@ -765,39 +736,31 @@ ERROR
 <td headers="ERROR" class="gt_row gt_right">
 0
 </td>
+<td headers="Deadline" class="gt_row gt_right">
+</td>
 </tr>
 <tr>
-<td headers="package" class="gt_row gt_center" style="background-color: #C9654B;">
-<div data-qmd="[simulist](https://cran.r-project.org/web/checks/check_results_simulist.html)" class="html-fill-item html-fill-container">
-<div class="gt_from_md html-fill-item html-fill-container">
-<p>
-<a href="https://cran.r-project.org/web/checks/check_results_simulist.html">simulist</a>
-</p>
-</div>
-</div>
+<td headers="package" class="gt_row gt_center" style="background-color: #F9956B;">
+<span data-qmd-base64="PGEgaHJlZj0iaHR0cHM6Ly9jcmFuLnItcHJvamVjdC5vcmcvd2ViL2NoZWNrcy9jaGVja19yZXN1bHRzX3NpbXVsaXN0Lmh0bWwiPnNpbXVsaXN0PC9hPg=="><span class="gt_from_md"><a href="https://cran.r-project.org/web/checks/check_results_simulist.html">simulist</a></span></span>
 </td>
-<td headers="OK" class="gt_row gt_right" style="background-color: #C9654B;">
+<td headers="OK" class="gt_row gt_right" style="background-color: #F9956B;">
 12
 </td>
-<td headers="NOTE" class="gt_row gt_right" style="background-color: #C9654B;">
+<td headers="NOTE" class="gt_row gt_right" style="background-color: #F9956B;">
 0
 </td>
-<td headers="WARN" class="gt_row gt_right" style="background-color: #C9654B;">
+<td headers="WARN" class="gt_row gt_right" style="background-color: #F9956B;">
 0
 </td>
-<td headers="ERROR" class="gt_row gt_right" style="background-color: #C9654B;">
+<td headers="ERROR" class="gt_row gt_right" style="background-color: #F9956B;">
 1
+</td>
+<td headers="Deadline" class="gt_row gt_right" style="background-color: #F9956B;">
 </td>
 </tr>
 <tr>
 <td headers="package" class="gt_row gt_center">
-<div data-qmd="[sivirep](https://cran.r-project.org/web/checks/check_results_sivirep.html)" class="html-fill-item html-fill-container">
-<div class="gt_from_md html-fill-item html-fill-container">
-<p>
-<a href="https://cran.r-project.org/web/checks/check_results_sivirep.html">sivirep</a>
-</p>
-</div>
-</div>
+<span data-qmd-base64="PGEgaHJlZj0iaHR0cHM6Ly9jcmFuLnItcHJvamVjdC5vcmcvd2ViL2NoZWNrcy9jaGVja19yZXN1bHRzX3NpdmlyZXAuaHRtbCI+c2l2aXJlcDwvYT4="><span class="gt_from_md"><a href="https://cran.r-project.org/web/checks/check_results_sivirep.html">sivirep</a></span></span>
 </td>
 <td headers="OK" class="gt_row gt_right">
 13
@@ -811,16 +774,12 @@ ERROR
 <td headers="ERROR" class="gt_row gt_right">
 0
 </td>
+<td headers="Deadline" class="gt_row gt_right">
+</td>
 </tr>
 <tr>
 <td headers="package" class="gt_row gt_center">
-<div data-qmd="[superspreading](https://cran.r-project.org/web/checks/check_results_superspreading.html)" class="html-fill-item html-fill-container">
-<div class="gt_from_md html-fill-item html-fill-container">
-<p>
-<a href="https://cran.r-project.org/web/checks/check_results_superspreading.html">superspreading</a>
-</p>
-</div>
-</div>
+<span data-qmd-base64="PGEgaHJlZj0iaHR0cHM6Ly9jcmFuLnItcHJvamVjdC5vcmcvd2ViL2NoZWNrcy9jaGVja19yZXN1bHRzX3N1cGVyc3ByZWFkaW5nLmh0bWwiPnN1cGVyc3ByZWFkaW5nPC9hPg=="><span class="gt_from_md"><a href="https://cran.r-project.org/web/checks/check_results_superspreading.html">superspreading</a></span></span>
 </td>
 <td headers="OK" class="gt_row gt_right">
 11
@@ -834,16 +793,12 @@ ERROR
 <td headers="ERROR" class="gt_row gt_right">
 0
 </td>
+<td headers="Deadline" class="gt_row gt_right">
+</td>
 </tr>
 <tr>
 <td headers="package" class="gt_row gt_center">
-<div data-qmd="[vaccineff](https://cran.r-project.org/web/checks/check_results_vaccineff.html)" class="html-fill-item html-fill-container">
-<div class="gt_from_md html-fill-item html-fill-container">
-<p>
-<a href="https://cran.r-project.org/web/checks/check_results_vaccineff.html">vaccineff</a>
-</p>
-</div>
-</div>
+<span data-qmd-base64="PGEgaHJlZj0iaHR0cHM6Ly9jcmFuLnItcHJvamVjdC5vcmcvd2ViL2NoZWNrcy9jaGVja19yZXN1bHRzX3ZhY2NpbmVmZi5odG1sIj52YWNjaW5lZmY8L2E+"><span class="gt_from_md"><a href="https://cran.r-project.org/web/checks/check_results_vaccineff.html">vaccineff</a></span></span>
 </td>
 <td headers="OK" class="gt_row gt_right">
 13
@@ -856,6 +811,8 @@ ERROR
 </td>
 <td headers="ERROR" class="gt_row gt_right">
 0
+</td>
+<td headers="Deadline" class="gt_row gt_right">
 </td>
 </tr>
 </tbody>
