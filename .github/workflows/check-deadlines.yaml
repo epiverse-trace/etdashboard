@@ -42,9 +42,35 @@ jobs:
               !is.na(Deadline)
             )
 
-          for (i in seq_len(nrow(et_pkgs_deadline))) {
-            pkg <- et_pkgs_deadline$Package[i]
-            deadline <- et_pkgs_deadline$Deadline[i]
-            # Convert this step to posting a GitHub issue once confirmed working
-            stop(glue::glue("Package {pkg} is at risk to be archived by {deadline}."))
+          issues <- gh::gh(
+            "/repos/{owner}/{repo}/issues",
+            owner = "epiverse-trace",
+            repo = "etdashboard"
+          ) |>
+            purrr::map(\(x) x[c("title", "number")]) |>
+            dplyr::bind_rows()
+
+          et_pkgs_archiveable <- et_pkgs_deadline |>
+            dplyr::left_join(issues, by = dplyr::join_by(Package == title))
+
+          for (i in seq_len(nrow(et_pkgs_archiveable))) {
+            pkg <- et_pkgs_archiveable$Package[i]
+            deadline <- et_pkgs_archiveable$Deadline[i]
+            issue <- et_pkgs_archiveable$number[i]
+            gh::gh(
+              "PATCH /repos/{owner}/{repo}/issues/{issue_number}",
+              owner = "epiverse-trace",
+              repo = "etdashboard",
+              state = "open"
+              issue_number = issue
+            )
+            gh::gh(
+              "POST /repos/{owner}/{repo}/issues/{issue_number}/comments",
+              owner = "epiverse-trace",
+              repo = "etdashboard",
+              issue_number = issue
+              body = glue::glue("Package {pkg} is at risk to be archived by {deadline}.")
+            )
           }
+
+
