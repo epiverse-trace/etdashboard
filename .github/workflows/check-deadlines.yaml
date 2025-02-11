@@ -73,6 +73,7 @@ jobs:
               issue_number = issue,
               body = glue::glue("Package {pkg} is at risk to be archived by {deadline}.")
             )
+            # FIXME: do we need a mechanism to close issues?
           }
 
 
