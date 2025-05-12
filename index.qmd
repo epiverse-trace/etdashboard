@@ -1,7 +1,9 @@
 ---
-title: "Epiverse-TRACE CRAN checks"
+title: "`r glue::glue('{params$universe} CRAN checks')`"
 format:
   dashboard
+params:
+  universe: epiverse-trace
 ---
 
 Last update: `r Sys.Date()`
@@ -14,8 +16,8 @@ get_pkg_checks <- function(pkg) {
     xml2::xml_find_first("//table") |>
     rvest::html_table() |>
     # We don't need to see outdated checks here
-    dplyr::mutate(Version == as.package_version(Version)) |> 
-    dplyr::filter(Version == max(Version)) |> 
+    dplyr::mutate(Version == as.package_version(Version)) |>
+    dplyr::filter(Version == max(Version)) |>
     with(data = _, table(Status))
 
 }
@@ -24,12 +26,13 @@ get_pkg_checks <- function(pkg) {
 ## CRAN checks
 
 ```{r, cache=TRUE}
-et_cran_pkgs <- "https://epiverse-trace.r-universe.dev/api/packages/" |> 
+et_cran_pkgs <- "https://{params$universe}.r-universe.dev/api/packages/" |>
+  glue::glue() |>
   jsonlite::fromJSON() |>
   dplyr::filter(
     `_registered`,
     `_cranurl`
-    ) |> 
+    ) |>
   dplyr::pull(Package)
 ```
 
@@ -37,43 +40,43 @@ et_cran_pkgs <- "https://epiverse-trace.r-universe.dev/api/packages/" |>
 et_pkgs_cchecks <- et_cran_pkgs |>
   purrr::map(get_pkg_checks) |>
   dplyr::bind_rows() |>
-  dplyr::mutate(dplyr::across(everything(), as.numeric)) |> 
+  dplyr::mutate(dplyr::across(everything(), as.numeric)) |>
   dplyr::bind_rows(data.frame(OK = numeric(), NOTE = numeric(), WARN = numeric(), ERROR = numeric())) |>
-  dplyr::mutate(package = et_cran_pkgs, .before = 1) |> 
-  dplyr::arrange(package) |> 
-  dplyr::relocate(package, OK, NOTE, WARN, ERROR) |> 
+  dplyr::mutate(package = et_cran_pkgs, .before = 1) |>
+  dplyr::arrange(package) |>
+  dplyr::relocate(package, OK, NOTE, WARN, ERROR) |>
   dplyr::mutate(dplyr::across(everything(), ~ ifelse(is.na(.x), 0, .x)))
 ```
 
 ```{r}
-crandb <- tools::CRAN_package_db() |> 
-  dplyr::select(package = Package, Deadline) |> 
+crandb <- tools::CRAN_package_db() |>
+  dplyr::select(package = Package, Deadline) |>
   tidyr::replace_na(list(Deadline = ""))
 
-et_pkgs_cchecks <- et_pkgs_cchecks |> 
+et_pkgs_cchecks <- et_pkgs_cchecks |>
   dplyr::left_join(crandb)
 ```
 
 ```{r, results='asis'}
-et_pkgs_cchecks |> 
+et_pkgs_cchecks |>
   dplyr::mutate(
     package = glue::glue("[{package}](https://cran.r-project.org/web/checks/check_results_{package}.html)")
   ) |>
   # pin id to avoid getting a random one each time and generating unnecessary diffs
-  gt::gt(id = "cchecks_table") |> 
-  gt::fmt_markdown(package) |> 
-  gt::fmt_markdown(package) |> 
+  gt::gt(id = "cchecks_table") |>
+  gt::fmt_markdown(package) |>
+  gt::fmt_markdown(package) |>
   gt::tab_style(
     style = list(
       gt::cell_fill(color = "#DDBB00")
     ),
     locations = gt::cells_body(rows = ERROR > 0)
-  ) |> 
+  ) |>
   gt::tab_style(
     style = list(
       gt::cell_fill(color = "#F9956B")
     ),
     locations = gt::cells_body(rows = ERROR > 0)
-  ) |> 
+  ) |>
   print()
 ```
