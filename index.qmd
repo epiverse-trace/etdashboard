@@ -32,7 +32,7 @@ et_cran_pkgs <- "https://{params$universe}.r-universe.dev/api/packages/" |>
   dplyr::filter(
     `_registered`,
     `_cranurl`
-    ) |>
+  ) |>
   dplyr::pull(Package)
 ```
 
@@ -60,12 +60,14 @@ et_pkgs_cchecks <- et_pkgs_cchecks |>
 ```{r, results='asis'}
 et_pkgs_cchecks |>
   dplyr::mutate(
-    package = glue::glue("[{package}](https://cran.r-project.org/web/checks/check_results_{package}.html)")
+    `GitHub Actions` = glue::glue("[![R-CMD-check](https://github.com/{params$universe}/{package}/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/{params$universe}/{package}/actions/workflows/R-CMD-check.yaml)"),
+    package = glue::glue("[{package}](https://cran.r-project.org/web/checks/check_results_{package}.html)"),
+    .after = package
   ) |>
   # pin id to avoid getting a random one each time and generating unnecessary diffs
   gt::gt(id = "cchecks_table") |>
   gt::fmt_markdown(package) |>
-  gt::fmt_markdown(package) |>
+  gt::fmt_markdown("GitHub Actions") |>
   gt::tab_style(
     style = list(
       gt::cell_fill(color = "#DDBB00")
