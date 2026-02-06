@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.8">
+<meta name="generator" content="quarto-1.9.19">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>epiverse-trace CRAN checks</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -31,14 +34,14 @@ ul.task-list li input[type="checkbox"] {
 <script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
 <script src="index_files/libs/quarto-html/anchor.min.js"></script>
 <link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-095e6f6405c331e3b33229e03003579f.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-dark-8162e5fc71f232ea33f1e8ee7aaa6861.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-095e6f6405c331e3b33229e03003579f.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-3f61aac59b63c3a2d0e87c59ee7d0662.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-dark-16d4f45e73e79269d5f4ab1d9a7bfc95.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-3f61aac59b63c3a2d0e87c59ee7d0662.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="index_files/libs/bootstrap/bootstrap-6a464a75749143d765cc8984e0decab1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="index_files/libs/bootstrap/bootstrap-dark-6a464a75749143d765cc8984e0decab1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="index_files/libs/bootstrap/bootstrap-6a464a75749143d765cc8984e0decab1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="index_files/libs/bootstrap/bootstrap-47aa2ddab4e007668fc5fcfe3e725fee.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="index_files/libs/bootstrap/bootstrap-dark-47aa2ddab4e007668fc5fcfe3e725fee.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="index_files/libs/bootstrap/bootstrap-47aa2ddab4e007668fc5fcfe3e725fee.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="index_files/libs/quarto-dashboard/quarto-dashboard.js"></script>
 <script src="index_files/libs/quarto-dashboard/stickythead.js"></script>
 
@@ -75,462 +78,68 @@ ul.task-list li input[type="checkbox"] {
 </header>
 <div class="page-layout-custom quarto-dashboard-content bslib-gap-spacing html-fill-container bslib-page-fill">  
 
-<p>Last update: 2025-10-28</p>
+<p>Last update: 2026-02-06</p>
 <div class="bslib-grid-item html-fill-item bslib-grid" data-layout="fill" style="display: grid; grid-template-rows: minmax(3em, max-content); grid-auto-columns: minmax(0, 1fr);">
 <div class="bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr);
 grid-auto-rows: minmax(0, 1fr);">
 <div class="card bslib-card html-fill-container" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
 <div class="card-body html-fill-item html-fill-container">
 <div id="cchecks_table" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;" class="html-fill-item html-fill-container">
-<style>#cchecks_table table {
-  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-#cchecks_table thead, #cchecks_table tbody, #cchecks_table tfoot, #cchecks_table tr, #cchecks_table td, #cchecks_table th {
-  border-style: none;
-}
-
-#cchecks_table p {
-  margin: 0;
-  padding: 0;
-}
-
-#cchecks_table .gt_table {
-  display: table;
-  border-collapse: collapse;
-  line-height: normal;
-  margin-left: auto;
-  margin-right: auto;
-  color: #333333;
-  font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
-  background-color: #FFFFFF;
-  width: auto;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #A8A8A8;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #A8A8A8;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-}
-
-#cchecks_table .gt_caption {
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-#cchecks_table .gt_title {
-  color: #333333;
-  font-size: 125%;
-  font-weight: initial;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-
-#cchecks_table .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 3px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-
-#cchecks_table .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#cchecks_table .gt_bottom_border {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#cchecks_table .gt_col_headings {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#cchecks_table .gt_col_heading {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  overflow-x: hidden;
-}
-
-#cchecks_table .gt_column_spanner_outer {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-#cchecks_table .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-
-#cchecks_table .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-
-#cchecks_table .gt_column_spanner {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow-x: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
-#cchecks_table .gt_spanner_row {
-  border-bottom-style: hidden;
-}
-
-#cchecks_table .gt_group_heading {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  text-align: left;
-}
-
-#cchecks_table .gt_empty_group_heading {
-  padding: 0.5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: middle;
-}
-
-#cchecks_table .gt_from_md > :first-child {
-  margin-top: 0;
-}
-
-#cchecks_table .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-
-#cchecks_table .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 10px;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  overflow-x: hidden;
-}
-
-#cchecks_table .gt_stub {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#cchecks_table .gt_stub_row_group {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-  vertical-align: top;
-}
-
-#cchecks_table .gt_row_group_first td {
-  border-top-width: 2px;
-}
-
-#cchecks_table .gt_row_group_first th {
-  border-top-width: 2px;
-}
-
-#cchecks_table .gt_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#cchecks_table .gt_first_summary_row {
-  border-top-style: solid;
-  border-top-color: #D3D3D3;
-}
-
-#cchecks_table .gt_first_summary_row.thick {
-  border-top-width: 2px;
-}
-
-#cchecks_table .gt_last_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#cchecks_table .gt_grand_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#cchecks_table .gt_first_grand_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-style: double;
-  border-top-width: 6px;
-  border-top-color: #D3D3D3;
-}
-
-#cchecks_table .gt_last_grand_summary_row_top {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: double;
-  border-bottom-width: 6px;
-  border-bottom-color: #D3D3D3;
-}
-
-#cchecks_table .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-
-#cchecks_table .gt_table_body {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#cchecks_table .gt_footnotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#cchecks_table .gt_footnote {
-  margin: 0px;
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#cchecks_table .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#cchecks_table .gt_sourcenote {
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#cchecks_table .gt_left {
-  text-align: left;
-}
-
-#cchecks_table .gt_center {
-  text-align: center;
-}
-
-#cchecks_table .gt_right {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-#cchecks_table .gt_font_normal {
-  font-weight: normal;
-}
-
-#cchecks_table .gt_font_bold {
-  font-weight: bold;
-}
-
-#cchecks_table .gt_font_italic {
-  font-style: italic;
-}
-
-#cchecks_table .gt_super {
-  font-size: 65%;
-}
-
-#cchecks_table .gt_footnote_marks {
-  font-size: 75%;
-  vertical-align: 0.4em;
-  position: initial;
-}
-
-#cchecks_table .gt_asterisk {
-  font-size: 100%;
-  vertical-align: 0;
-}
-
-#cchecks_table .gt_indent_1 {
-  text-indent: 5px;
-}
-
-#cchecks_table .gt_indent_2 {
-  text-indent: 10px;
-}
-
-#cchecks_table .gt_indent_3 {
-  text-indent: 15px;
-}
-
-#cchecks_table .gt_indent_4 {
-  text-indent: 20px;
-}
-
-#cchecks_table .gt_indent_5 {
-  text-indent: 25px;
-}
-
-#cchecks_table .katex-display {
-  display: inline-flex !important;
-  margin-bottom: 0.75em !important;
-}
-
-#cchecks_table div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
-  height: 0px !important;
-}
-</style>
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<p><style>#cchecks_table table { font-family: system-ui, ‘Segoe UI’, Roboto, Helvetica, Arial, sans-serif, ‘Apple Color Emoji’, ‘Segoe UI Emoji’, ‘Segoe UI Symbol’, ‘Noto Color Emoji’; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }</p>
+<p>#cchecks_table thead, #cchecks_table tbody, #cchecks_table tfoot, #cchecks_table tr, #cchecks_table td, #cchecks_table th { border-style: none; }</p>
+<p>#cchecks_table p { margin: 0; padding: 0; }</p>
+<p>#cchecks_table .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }</p>
+<p>#cchecks_table .gt_caption { padding-top: 4px; padding-bottom: 4px; }</p>
+<p>#cchecks_table .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }</p>
+<p>#cchecks_table .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }</p>
+<p>#cchecks_table .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }</p>
+<p>#cchecks_table .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }</p>
+<p>#cchecks_table .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }</p>
+<p>#cchecks_table .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }</p>
+<p>#cchecks_table .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }</p>
+<p>#cchecks_table .gt_column_spanner_outer:first-child { padding-left: 0; }</p>
+<p>#cchecks_table .gt_column_spanner_outer:last-child { padding-right: 0; }</p>
+<p>#cchecks_table .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }</p>
+<p>#cchecks_table .gt_spanner_row { border-bottom-style: hidden; }</p>
+<p>#cchecks_table .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }</p>
+<p>#cchecks_table .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }</p>
+<p>#cchecks_table .gt_from_md &gt; :first-child { margin-top: 0; }</p>
+<p>#cchecks_table .gt_from_md &gt; :last-child { margin-bottom: 0; }</p>
+<p>#cchecks_table .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }</p>
+<p>#cchecks_table .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }</p>
+<p>#cchecks_table .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }</p>
+<p>#cchecks_table .gt_row_group_first td { border-top-width: 2px; }</p>
+<p>#cchecks_table .gt_row_group_first th { border-top-width: 2px; }</p>
+<p>#cchecks_table .gt_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }</p>
+<p>#cchecks_table .gt_first_summary_row { border-top-style: solid; border-top-color: #D3D3D3; }</p>
+<p>#cchecks_table .gt_first_summary_row.thick { border-top-width: 2px; }</p>
+<p>#cchecks_table .gt_last_summary_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }</p>
+<p>#cchecks_table .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }</p>
+<p>#cchecks_table .gt_first_grand_summary_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }</p>
+<p>#cchecks_table .gt_last_grand_summary_row_top { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }</p>
+<p>#cchecks_table .gt_striped { background-color: rgba(128, 128, 128, 0.05); }</p>
+<p>#cchecks_table .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }</p>
+<p>#cchecks_table .gt_footnotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }</p>
+<p>#cchecks_table .gt_footnote { margin: 0px; font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; }</p>
+<p>#cchecks_table .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }</p>
+<p>#cchecks_table .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; }</p>
+<p>#cchecks_table .gt_left { text-align: left; }</p>
+<p>#cchecks_table .gt_center { text-align: center; }</p>
+<p>#cchecks_table .gt_right { text-align: right; font-variant-numeric: tabular-nums; }</p>
+<p>#cchecks_table .gt_font_normal { font-weight: normal; }</p>
+<p>#cchecks_table .gt_font_bold { font-weight: bold; }</p>
+<p>#cchecks_table .gt_font_italic { font-style: italic; }</p>
+<p>#cchecks_table .gt_super { font-size: 65%; }</p>
+<p>#cchecks_table .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }</p>
+<p>#cchecks_table .gt_asterisk { font-size: 100%; vertical-align: 0; }</p>
+<p>#cchecks_table .gt_indent_1 { text-indent: 5px; }</p>
+<p>#cchecks_table .gt_indent_2 { text-indent: 10px; }</p>
+<p>#cchecks_table .gt_indent_3 { text-indent: 15px; }</p>
+<p>#cchecks_table .gt_indent_4 { text-indent: 20px; }</p>
+<p>#cchecks_table .gt_indent_5 { text-indent: 25px; }</p>
+<p>#cchecks_table .katex-display { display: inline-flex !important; margin-bottom: 0.75em !important; }</p>
+#cchecks_table div.Reactable &gt; div.rt-table &gt; div.rt-thead &gt; div.rt-tr.rt-tr-group-header &gt; div.rt-th-group:after { height: 0px !important; } </style>
+</p><table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
 <tr class="gt_col_headings">
 <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="package">
@@ -785,10 +394,10 @@ Deadline
 <span data-qmd-base64="WyFbUi1DTUQtY2hlY2tdKGh0dHBzOi8vZ2l0aHViLmNvbS9lcGl2ZXJzZS10cmFjZS9yZWFkZXBpL2FjdGlvbnMvd29ya2Zsb3dzL1ItQ01ELWNoZWNrLnlhbWwvYmFkZ2Uuc3ZnKV0oaHR0cHM6Ly9naXRodWIuY29tL2VwaXZlcnNlLXRyYWNlL3JlYWRlcGkvYWN0aW9ucy93b3JrZmxvd3MvUi1DTUQtY2hlY2sueWFtbCk="><span class="gt_from_md"><a href="https://github.com/epiverse-trace/readepi/actions/workflows/R-CMD-check.yaml"><img src="https://github.com/epiverse-trace/readepi/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></span></span>
 </td>
 <td headers="OK" class="gt_row gt_right">
-4
+10
 </td>
 <td headers="NOTE" class="gt_row gt_right">
-2
+3
 </td>
 <td headers="WARN" class="gt_row gt_right">
 0
@@ -819,29 +428,6 @@ Deadline
 0
 </td>
 <td headers="Deadline" class="gt_row gt_right">
-</td>
-</tr>
-<tr>
-<td headers="package" class="gt_row gt_center">
-<span data-qmd-base64="W3NpdmlyZXBdKGh0dHBzOi8vY3Jhbi5yLXByb2plY3Qub3JnL3dlYi9jaGVja3MvY2hlY2tfcmVzdWx0c19zaXZpcmVwLmh0bWwp"><span class="gt_from_md"><a href="https://cran.r-project.org/web/checks/check_results_sivirep.html">sivirep</a></span></span>
-</td>
-<td headers="GitHub Actions" class="gt_row gt_center">
-<span data-qmd-base64="WyFbUi1DTUQtY2hlY2tdKGh0dHBzOi8vZ2l0aHViLmNvbS9lcGl2ZXJzZS10cmFjZS9zaXZpcmVwL2FjdGlvbnMvd29ya2Zsb3dzL1ItQ01ELWNoZWNrLnlhbWwvYmFkZ2Uuc3ZnKV0oaHR0cHM6Ly9naXRodWIuY29tL2VwaXZlcnNlLXRyYWNlL3NpdmlyZXAvYWN0aW9ucy93b3JrZmxvd3MvUi1DTUQtY2hlY2sueWFtbCk="><span class="gt_from_md"><a href="https://github.com/epiverse-trace/sivirep/actions/workflows/R-CMD-check.yaml"><img src="https://github.com/epiverse-trace/sivirep/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></span></span>
-</td>
-<td headers="OK" class="gt_row gt_right">
-13
-</td>
-<td headers="NOTE" class="gt_row gt_right">
-0
-</td>
-<td headers="WARN" class="gt_row gt_right">
-0
-</td>
-<td headers="ERROR" class="gt_row gt_right">
-0
-</td>
-<td headers="Deadline" class="gt_row gt_right">
-2025-10-28
 </td>
 </tr>
 <tr>
